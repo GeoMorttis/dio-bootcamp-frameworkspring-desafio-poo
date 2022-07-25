@@ -22,12 +22,19 @@ public class Mentoria extends Conteudo {
         this.data = data;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Mentoria{" +
+//                "titulo='" + getTitulo() + '\'' +
+//                ", descricao='" + getDescricao() + '\'' +
+//                ", data=" + data +
+//                '}';
+//    }
     @Override
     public String toString() {
-        return "Mentoria{" +
-                "titulo='" + getTitulo() + '\'' +
-                ", descricao='" + getDescricao() + '\'' +
-                ", data=" + data +
-                '}';
+        return "Mentoria: \n" +
+                "Título = " + getTitulo() + "\n" +
+                "Descrição = " + getDescricao() + "\n" +
+                "Data = " + data + "\n";
     }
 }
