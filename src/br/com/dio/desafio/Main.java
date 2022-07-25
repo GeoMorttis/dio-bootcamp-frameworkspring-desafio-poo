@@ -1,6 +1,8 @@
 package br.com.dio.desafio;
 
+import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
+import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Mentoria;
 
 import java.time.LocalDate;
@@ -23,8 +25,43 @@ public class Main {
         mentoria.setDescricao("Descrição mentoria Java");
         mentoria.setData(LocalDate.now());
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);
+//        System.out.println(curso1);
+//        System.out.println(curso2);
+//        System.out.println(mentoria);
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devMorttis = new Dev();
+        devMorttis.setNome("Morttis");
+        devMorttis.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos Morttis:" + devMorttis.getConteudosInscritos());
+
+        devMorttis.progredir();
+        devMorttis.progredir();
+        devMorttis.progredir();
+        System.out.println("---");
+
+        System.out.println("Conteúdos Inscritos Morttis:" + devMorttis.getConteudosInscritos());
+        System.out.println("Conteúdos Concluidos Morttis:" + devMorttis.getConteudosInscritos());
+        System.out.println("XP:" + devMorttis.calcularTotalXp());
+
+        System.out.println("---------");
+
+        Dev devCamila = new Dev();
+        devCamila.setNome("Camila");
+        devCamila.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
+
+        devCamila.progredir();
+        System.out.println("---");
+
+        System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
+        System.out.println("Conteúdos Concluidos Camila:" + devCamila.getConteudosInscritos());
+        System.out.println("XP:" + devCamila.calcularTotalXp());
     }
 }
